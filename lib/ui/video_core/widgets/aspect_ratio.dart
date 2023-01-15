@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../data/repositories/video.dart';
 
 class VideoCoreAspectRadio extends StatelessWidget {
   const VideoCoreAspectRadio({

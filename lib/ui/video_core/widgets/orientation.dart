@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../data/repositories/video.dart';
 
 class VideoCoreOrientation extends StatelessWidget {
   const VideoCoreOrientation({Key? key, this.builder}) : super(key: key);
@@ -7,7 +7,7 @@ class VideoCoreOrientation extends StatelessWidget {
   final Widget Function(bool)? builder;
 
   @override
-  Widget build(BuildContext _) {
+  Widget build(BuildContext context) {
     return OrientationBuilder(builder: (context, Orientation orientation) {
       final video = VideoQuery().video(context, listen: false);
       return builder!(

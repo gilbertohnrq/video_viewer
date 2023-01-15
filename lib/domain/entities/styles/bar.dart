@@ -33,7 +33,7 @@ class BarStyle {
     BorderRadius? borderRadius,
   })  : this.width = double.infinity,
         this.identifier = dot ?? Colors.white,
-        this.color = color ?? Color(0xFF295acc),
+        this.color = color ?? const Color(0xFF295acc),
         this.secondBackground = buffered ?? Colors.white.withOpacity(0.3),
         this.background = background ?? Colors.white.withOpacity(0.2),
         this.borderRadius = borderRadius ?? EdgeRadius.all(5.0),

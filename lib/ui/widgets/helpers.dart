@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helpers/helpers.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../data/repositories/video.dart';
 
 class SplashCircularIcon extends StatelessWidget {
   const SplashCircularIcon({
@@ -19,9 +19,9 @@ class SplashCircularIcon extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       child: Ink(
-        decoration: BoxDecoration(shape: BoxShape.circle),
+        decoration: const BoxDecoration(shape: BoxShape.circle),
         child: InkWell(
-          customBorder: CircleBorder(),
+          customBorder: const CircleBorder(),
           onTap: onTap,
           child: Padding(
             padding: padding ?? EdgeInsets.zero,
@@ -49,13 +49,13 @@ class CustomText extends StatelessWidget {
     final style = metadata.style.settingsStyle;
 
     return Padding(
-      padding: Margin.horizontal(8),
+      padding: const Margin.horizontal(8),
       child: Row(children: [
         Expanded(
           child: Text(
             text,
             style: metadata.style.textStyle.merge(
-              TextStyle(
+              const TextStyle(
                 fontWeight: FontWeight.normal,
               ),
             ),

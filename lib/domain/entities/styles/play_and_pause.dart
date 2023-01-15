@@ -11,10 +11,10 @@ class PlayAndPauseWidgetStyle {
     Color? background,
     this.circleBorder,
     this.circleRadius = 40,
-  })  : background = background ?? Color(0xFF295acc).withOpacity(0.8),
-        play = play ?? Icon(Icons.play_arrow, color: Colors.white),
-        pause = pause ?? Icon(Icons.pause, color: Colors.white),
-        replay = replay ?? Icon(Icons.replay, color: Colors.white);
+  })  : background = background ?? const Color(0xFF295acc).withOpacity(0.8),
+        play = play ?? const Icon(Icons.play_arrow, color: Colors.white),
+        pause = pause ?? const Icon(Icons.pause, color: Colors.white),
+        replay = replay ?? const Icon(Icons.replay, color: Colors.white);
 
   /// It is the icon that will have the play of the progress bar and also
   /// the one that appears in the middle of the screen

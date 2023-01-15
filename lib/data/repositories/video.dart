@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:video_viewer/domain/repositories/video.dart';
-import 'package:video_viewer/domain/bloc/controller.dart';
-import 'package:video_viewer/domain/bloc/metadata.dart';
-import 'package:video_viewer/video_viewer.dart';
+import '../../domain/repositories/video.dart';
+import '../../domain/bloc/metadata.dart';
+import '../../video_viewer.dart';
 
 class VideoQuery extends VideoQueryRepository {
   @override
@@ -28,13 +27,8 @@ class VideoQuery extends VideoQueryRepository {
   @override
   String durationFormatter(Duration duration) {
     final int hours = duration.inHours;
-    final String formatter = [
-      if (hours != 0) hours,
-      duration.inMinutes,
-      duration.inSeconds
-    ]
-        .map((seg) => seg.abs().remainder(60).toString().padLeft(2, '0'))
-        .join(':');
-    return duration.inSeconds < 0 ? "-$formatter" : formatter;
+    final String formatter =
+        [if (hours != 0) hours, duration.inMinutes, duration.inSeconds].map((seg) => seg.abs().remainder(60).toString().padLeft(2, '0')).join(':');
+    return duration.inSeconds < 0 ? '-$formatter' : formatter;
   }
 }

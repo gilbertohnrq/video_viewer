@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/domain/entities/settings_menu_item.dart';
+import '../settings_menu_item.dart';
 
 class SettingsMenuStyle {
   /// These are the styles of the settings sales, here you will change the icons and
@@ -14,21 +14,20 @@ class SettingsMenuStyle {
     this.paddingSecondaryMenuItems = const EdgeInsets.symmetric(vertical: 4),
     this.items,
   })  : this.settings = settings ??
-            Icon(
+            const Icon(
               Icons.settings_outlined,
               color: Colors.white,
               size: 20,
             ),
         this.caption = caption ??
-            Icon(
+            const Icon(
               Icons.closed_caption_outlined,
               color: Colors.white,
               size: 20,
             ),
-        this.speed = speed ?? Icon(Icons.speed, color: Colors.white, size: 20),
-        this.selected =
-            selected ?? Icon(Icons.done, color: Colors.white, size: 20),
-        this.chevron = chevron ?? Icon(Icons.chevron_left, color: Colors.white);
+        this.speed = speed ?? const Icon(Icons.speed, color: Colors.white, size: 20),
+        this.selected = selected ?? const Icon(Icons.done, color: Colors.white, size: 20),
+        this.chevron = chevron ?? const Icon(Icons.chevron_left, color: Colors.white);
 
   /// It is the icon that will have the [speed] change option
   ///

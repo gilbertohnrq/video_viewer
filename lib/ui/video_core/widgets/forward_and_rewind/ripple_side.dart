@@ -1,6 +1,6 @@
 import 'package:helpers/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../../data/repositories/video.dart';
 
 enum RippleSide { left, right }
 
@@ -21,17 +21,13 @@ class ForwardAndRewindRippleSide extends StatelessWidget {
 
     return CustomPaint(
       size: Size.infinite,
-      painter: side == RippleSide.left
-          ? _RippleLeftPainter(ripple)
-          : _RippleRightPainter(ripple),
+      painter: side == RippleSide.left ? _RippleLeftPainter(ripple) : _RippleRightPainter(ripple),
       child: Padding(
-        padding: side == RippleSide.left ? Margin.right(10) : Margin.left(10),
+        padding: side == RippleSide.left ? const Margin.right(10) : const Margin.left(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            side == RippleSide.left
-                ? style.forwardAndRewindStyle.rewind
-                : style.forwardAndRewindStyle.forward,
+            side == RippleSide.left ? style.forwardAndRewindStyle.rewind : style.forwardAndRewindStyle.forward,
             Text(text, style: style.textStyle),
           ],
         ),

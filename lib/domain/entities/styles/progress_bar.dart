@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/domain/entities/styles/bar.dart';
+import 'bar.dart';
 
 class ProgressBarStyle {
   /// It is the style that will have all the icons and elements of the progress bar
@@ -10,16 +10,15 @@ class ProgressBarStyle {
     Color? backgroundColor,
     this.paddingBeetwen = 12,
   })  : this.bar = bar ?? BarStyle.progress(),
-        this.backgroundColor =
-            backgroundColor ?? Colors.black.withOpacity(0.36),
+        this.backgroundColor = backgroundColor ?? Colors.black.withOpacity(0.36),
         this.fullScreen = fullScreen ??
-            Icon(
+            const Icon(
               Icons.fullscreen_outlined,
               color: Colors.white,
               size: 24,
             ),
         this.fullScreenExit = fullScreenExit ??
-            Icon(
+            const Icon(
               Icons.fullscreen_exit_outlined,
               color: Colors.white,
               size: 24,

@@ -8,12 +8,11 @@ class VideoViewerAd {
     this.fractionToStart,
     this.durationToEnd = const Duration(seconds: 8),
   })  : assert(
-          (fractionToStart != null && durationToStart == null) ||
-              (fractionToStart == null && durationToStart != null),
-          "One of the 2 arguments must be assigned.",
+          (fractionToStart != null && durationToStart == null) || (fractionToStart == null && durationToStart != null),
+          'One of the 2 arguments must be assigned.',
         ),
-        assert((fractionToStart ?? 0.0) >= 0 && (fractionToStart ?? 1.0) <= 1.0,
-            "fractionToStart must be greater or equal than 0.0 and lower or equal than 1.0");
+        assert(
+            (fractionToStart ?? 0.0) >= 0 && (fractionToStart ?? 1.0) <= 1.0, 'fractionToStart must be greater or equal than 0.0 and lower or equal than 1.0');
 
   /// It is the ad to show
   final Widget child;
@@ -43,9 +42,6 @@ class VideoViewerAd {
 
   @override
   int get hashCode {
-    return child.hashCode ^
-        durationToSkip.hashCode ^
-        durationToStart.hashCode ^
-        fractionToStart.hashCode;
+    return child.hashCode ^ durationToSkip.hashCode ^ durationToStart.hashCode ^ fractionToStart.hashCode;
   }
 }

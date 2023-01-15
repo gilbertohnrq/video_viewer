@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../../data/repositories/video.dart';
 
 class VideoCoreForwardAndRewindBar extends StatelessWidget {
   const VideoCoreForwardAndRewindBar({
@@ -48,8 +48,7 @@ class VideoCoreForwardAndRewindBar extends StatelessWidget {
               ),
               Container(
                 height: height,
-                width: ((relativePosition / duration.inSeconds) * width)
-                    .clamp(0.0, width),
+                width: ((relativePosition / duration.inSeconds) * width).clamp(0.0, width),
                 decoration: BoxDecoration(
                   color: forwardStyle.bar.color,
                   borderRadius: forwardStyle.borderRadius,
@@ -96,6 +95,5 @@ class _InitialPositionIdentifierPainter extends CustomPainter {
   bool shouldRepaint(_InitialPositionIdentifierPainter oldDelegate) => false;
 
   @override
-  bool shouldRebuildSemantics(_InitialPositionIdentifierPainter oldDelegate) =>
-      false;
+  bool shouldRebuildSemantics(_InitialPositionIdentifierPainter oldDelegate) => false;
 }

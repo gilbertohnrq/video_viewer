@@ -1,6 +1,6 @@
 import 'package:helpers/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../data/repositories/video.dart';
 
 class CustomOpacityTransition extends StatelessWidget {
   const CustomOpacityTransition({

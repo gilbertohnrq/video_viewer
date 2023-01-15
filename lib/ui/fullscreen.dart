@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:helpers/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/video_core/video_core.dart';
+import '../data/repositories/video.dart';
+import 'video_core/video_core.dart';
 
 class FullScreenPage extends StatefulWidget {
   const FullScreenPage({
@@ -34,10 +34,7 @@ class _FullScreenPageState extends State<FullScreenPage> {
   }
 
   Future<void> _setLandscapeFixed() async {
-    await Misc.setSystemOrientation([
-      ...SystemOrientation.landscapeLeft,
-      ...SystemOrientation.landscapeRight
-    ]);
+    await Misc.setSystemOrientation([...SystemOrientation.landscapeLeft, ...SystemOrientation.landscapeRight]);
     await _hideSystemOverlay();
   }
 
@@ -55,7 +52,7 @@ class _FullScreenPageState extends State<FullScreenPage> {
           await _query.video(context).openOrCloseFullscreen();
           return false;
         },
-        child: Center(
+        child: const Center(
           child: VideoViewerCore(),
         ),
       ),

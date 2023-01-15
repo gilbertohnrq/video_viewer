@@ -12,7 +12,7 @@ class SubtitleStyle {
     this.textAlign = TextAlign.center,
     this.padding = const EdgeInsets.all(20.0),
   }) : this.style = style ??
-            TextStyle(
+            const TextStyle(
               color: Colors.white,
               fontSize: 16,
               backgroundColor: Colors.black,

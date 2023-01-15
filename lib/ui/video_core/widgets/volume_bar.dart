@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import '../../../data/repositories/video.dart';
+import '../../widgets/transitions.dart';
 
 class VideoCoreVolumeBar extends StatelessWidget {
   const VideoCoreVolumeBar({
@@ -17,9 +17,7 @@ class VideoCoreVolumeBar extends StatelessWidget {
     final style = VideoQuery().videoStyle(context).volumeBarStyle;
     final double axisAlignment;
 
-    if (style.alignment == Alignment.topRight ||
-        style.alignment == Alignment.centerRight ||
-        style.alignment == Alignment.bottomRight)
+    if (style.alignment == Alignment.topRight || style.alignment == Alignment.centerRight || style.alignment == Alignment.bottomRight)
       axisAlignment = -1.0;
     else
       axisAlignment = 1.0;

@@ -2,13 +2,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 enum SubtitleType { webvtt, srt }
+
 enum _SubtitleIntializeType { network, string }
 
 class SubtitleData {
   SubtitleData({
     this.start = Duration.zero,
     this.end = Duration.zero,
-    this.text = "",
+    this.text = '',
   });
 
   final Duration start;

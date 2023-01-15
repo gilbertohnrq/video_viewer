@@ -1,11 +1,11 @@
 import 'package:helpers/helpers.dart';
 import 'package:flutter/material.dart';
 
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/overlay/widgets/progress_bar.dart';
-import 'package:video_viewer/ui/overlay/widgets/background.dart';
-import 'package:video_viewer/ui/widgets/play_and_pause.dart';
-import 'package:video_viewer/ui/widgets/helpers.dart';
+import '../../../data/repositories/video.dart';
+import 'progress_bar.dart';
+import 'background.dart';
+import '../../widgets/play_and_pause.dart';
+import '../../widgets/helpers.dart';
 
 class OverlayBottom extends StatefulWidget {
   const OverlayBottom({Key? key}) : super(key: key);
@@ -63,9 +63,7 @@ class _OverlayBottomState extends State<OverlayBottom> {
                   controller.cancelCloseOverlay();
                 },
                 child: Text(
-                  showText
-                      ? _query.durationFormatter(position)
-                      : _query.durationFormatter(position - duration),
+                  showText ? _query.durationFormatter(position) : _query.durationFormatter(position - duration),
                   style: style.textStyle,
                 ),
               ),
@@ -87,8 +85,7 @@ class _OverlayBottomState extends State<OverlayBottom> {
             SplashCircularIcon(
               padding: halfPadding + Margin.right(padding / 2),
               onTap: () => controller.openOrCloseFullscreen(),
-              child:
-                  isFullscreen ? barStyle.fullScreenExit : barStyle.fullScreen,
+              child: isFullscreen ? barStyle.fullScreenExit : barStyle.fullScreen,
             ),
           ]),
         ),

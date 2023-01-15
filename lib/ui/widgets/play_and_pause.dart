@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/widgets/helpers.dart';
+import '../../data/repositories/video.dart';
+import 'helpers.dart';
 
 enum PlayAndPauseType { center, bottom }
 

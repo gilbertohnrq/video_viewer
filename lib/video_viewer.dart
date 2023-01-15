@@ -3,13 +3,13 @@ library video_viewer;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:video_viewer/domain/bloc/controller.dart';
-import 'package:video_viewer/domain/bloc/metadata.dart';
-import 'package:video_viewer/domain/entities/language.dart';
-import 'package:video_viewer/domain/entities/styles/video_viewer.dart';
-import 'package:video_viewer/domain/entities/video_source.dart';
-import 'package:video_viewer/domain/entities/volume_control.dart';
-import 'package:video_viewer/ui/video_core/video_core.dart';
+import 'domain/bloc/controller.dart';
+import 'domain/bloc/metadata.dart';
+import 'domain/entities/language.dart';
+import 'domain/entities/styles/video_viewer.dart';
+import 'domain/entities/video_source.dart';
+import 'domain/entities/volume_control.dart';
+import 'ui/video_core/video_core.dart';
 
 export 'package:video_player/video_player.dart';
 export 'package:video_viewer/domain/bloc/controller.dart';
@@ -147,9 +147,9 @@ class VideoViewerState extends State<VideoViewer> {
     _controller.looping = widget.looping;
     _controller.isShowingThumbnail = _style.thumbnail != null;
     await _controller.initialize(widget.source, autoPlay: widget.autoPlay);
-    
+
     if (!mounted) return;
-    
+
     setState(() => _initialized = true);
   }
 
@@ -170,13 +170,10 @@ class VideoViewerState extends State<VideoViewer> {
                   defaultAspectRatio: widget.defaultAspectRatio,
                   onFullscreenFixLandscape: widget.onFullscreenFixLandscape,
                   enableFullscreenScale: widget.enableFullscreenScale,
-                  enableVerticalSwapingGesture:
-                      widget.enableVerticalSwapingGesture,
-                  enableHorizontalSwapingGesture:
-                      widget.enableHorizontalSwapingGesture,
+                  enableVerticalSwapingGesture: widget.enableVerticalSwapingGesture,
+                  enableHorizontalSwapingGesture: widget.enableHorizontalSwapingGesture,
                   enableChat: widget.enableChat,
-                  enableShowReplayIconAtVideoEnd:
-                      widget.enableShowReplayIconAtVideoEnd,
+                  enableShowReplayIconAtVideoEnd: widget.enableShowReplayIconAtVideoEnd,
                 ),
               ),
             ],

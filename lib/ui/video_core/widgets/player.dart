@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../data/repositories/video.dart';
 
 class VideoCorePlayer extends StatefulWidget {
   const VideoCorePlayer({Key? key}) : super(key: key);
@@ -19,9 +19,7 @@ class _VideoCorePlayerState extends State<VideoCorePlayer> {
     return Center(
       child: AspectRatio(
         aspectRatio: controller.video!.value.aspectRatio,
-        child: !controller.isChangingSource
-            ? VideoPlayer(controller.video!)
-            : Container(color: Colors.black, child: style.loading),
+        child: !controller.isChangingSource ? VideoPlayer(controller.video!) : Container(color: Colors.black, child: style.loading),
       ),
     );
   }

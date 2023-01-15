@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:video_viewer/domain/entities/styles/chat.dart';
-import 'package:video_viewer/domain/entities/styles/forward_and_rewind.dart';
-import 'package:video_viewer/domain/entities/styles/play_and_pause.dart';
-import 'package:video_viewer/domain/entities/styles/progress_bar.dart';
-import 'package:video_viewer/domain/entities/styles/settings_menu.dart';
-import 'package:video_viewer/domain/entities/styles/subtitle.dart';
-import 'package:video_viewer/domain/entities/styles/volume_bar.dart';
+import 'chat.dart';
+import 'forward_and_rewind.dart';
+import 'play_and_pause.dart';
+import 'progress_bar.dart';
+import 'settings_menu.dart';
+import 'subtitle.dart';
+import 'volume_bar.dart';
 
 export 'package:video_viewer/domain/entities/styles/bar.dart';
 export 'package:video_viewer/domain/entities/styles/chat.dart';
@@ -37,14 +37,14 @@ class VideoViewerStyle {
     this.skipAdBuilder,
     this.skipAdAlignment = Alignment.bottomRight,
   })  : loading = loading ??
-            Center(
+            const Center(
               child: CircularProgressIndicator(
                 strokeWidth: 1.6,
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               ),
             ),
         buffering = buffering ??
-            Center(
+            const Center(
               child: CircularProgressIndicator(
                 strokeWidth: 1.6,
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -55,12 +55,9 @@ class VideoViewerStyle {
         settingsStyle = settingsStyle ?? SettingsMenuStyle(),
         progressBarStyle = progressBarStyle ?? ProgressBarStyle(),
         volumeBarStyle = volumeBarStyle ?? VolumeBarStyle(),
-        forwardAndRewindStyle =
-            forwardAndRewindStyle ?? ForwardAndRewindStyle(),
+        forwardAndRewindStyle = forwardAndRewindStyle ?? ForwardAndRewindStyle(),
         playAndPauseStyle = playAndPauseStyle ?? PlayAndPauseWidgetStyle(),
-        textStyle = textStyle ??
-            TextStyle(
-                color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold);
+        textStyle = textStyle ?? const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold);
 
   /// These are the styles of the settings sales, here you will change the icons and
   /// the language of the texts
@@ -150,8 +147,7 @@ class VideoViewerStyle {
       volumeBarStyle: volumeBarStyle ?? this.volumeBarStyle,
       progressBarStyle: progressBarStyle ?? this.progressBarStyle,
       subtitleStyle: subtitleStyle ?? this.subtitleStyle,
-      forwardAndRewindStyle:
-          forwardAndRewindStyle ?? this.forwardAndRewindStyle,
+      forwardAndRewindStyle: forwardAndRewindStyle ?? this.forwardAndRewindStyle,
       playAndPauseStyle: playAndPauseStyle ?? this.playAndPauseStyle,
       thumbnail: thumbnail ?? this.thumbnail,
       header: header ?? this.header,

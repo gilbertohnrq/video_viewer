@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/domain/entities/subtitle.dart';
-import 'package:video_viewer/domain/entities/video_source.dart';
+import '../../../data/repositories/video.dart';
+import '../../../domain/entities/subtitle.dart';
+import '../../../domain/entities/video_source.dart';
 
-import 'package:video_viewer/ui/settings_menu/widgets/secondary_menu.dart';
-import 'package:video_viewer/ui/settings_menu/widgets/secondary_menu_item.dart';
-import 'package:video_viewer/ui/widgets/helpers.dart';
+import 'secondary_menu.dart';
+import 'secondary_menu_item.dart';
+import '../../widgets/helpers.dart';
 
 class CaptionMenu extends StatelessWidget {
   const CaptionMenu({Key? key}) : super(key: key);
@@ -42,8 +42,7 @@ class CaptionMenu extends StatelessWidget {
       ),
       for (MapEntry<String, VideoSource> entry in video.source!.entries)
         if (entry.key == activeSourceName && entry.value.subtitle != null)
-          for (MapEntry<String, VideoViewerSubtitle> subtitle
-              in entry.value.subtitle!.entries)
+          for (MapEntry<String, VideoViewerSubtitle> subtitle in entry.value.subtitle!.entries)
             SecondaryMenuItem(
               onTap: () {
                 onTap(

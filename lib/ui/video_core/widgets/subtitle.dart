@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../../data/repositories/video.dart';
 
 class VideoCoreActiveSubtitleText extends StatelessWidget {
   const VideoCoreActiveSubtitleText({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class VideoCoreActiveSubtitleText extends StatelessWidget {
       child: Padding(
         padding: style.padding,
         child: Text(
-          subtitle != null ? subtitle.text : "",
+          subtitle != null ? subtitle.text : '',
           style: style.style,
           textAlign: style.textAlign,
         ),

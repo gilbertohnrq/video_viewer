@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import '../../../data/repositories/video.dart';
+import '../../widgets/transitions.dart';
 
 class VideoCoreBuffering extends StatelessWidget {
   const VideoCoreBuffering({Key? key}) : super(key: key);

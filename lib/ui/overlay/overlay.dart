@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:helpers/helpers/widgets/align.dart';
-import 'package:video_viewer/data/repositories/video.dart';
+import '../../data/repositories/video.dart';
 
-import 'package:video_viewer/ui/settings_menu/settings_menu.dart';
-import 'package:video_viewer/ui/overlay/widgets/background.dart';
-import 'package:video_viewer/ui/overlay/widgets/bottom.dart';
-import 'package:video_viewer/ui/widgets/play_and_pause.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import '../settings_menu/settings_menu.dart';
+import 'widgets/background.dart';
+import 'widgets/bottom.dart';
+import '../widgets/play_and_pause.dart';
+import '../widgets/transitions.dart';
 
 class VideoCoreOverlay extends StatelessWidget {
   const VideoCoreOverlay({Key? key}) : super(key: key);

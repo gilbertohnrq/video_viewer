@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/widgets/play_and_pause.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import '../../../data/repositories/video.dart';
+import '../../widgets/play_and_pause.dart';
+import '../../widgets/transitions.dart';
 
 class VideoCoreThumbnail extends StatelessWidget {
   const VideoCoreThumbnail({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class VideoCoreThumbnail extends StatelessWidget {
       visible: controller.isShowingThumbnail,
       child: Stack(children: [
         if (thumbnail != null) Positioned.fill(child: thumbnail),
-        Center(child: PlayAndPause(type: PlayAndPauseType.center)),
+        const Center(child: PlayAndPause(type: PlayAndPauseType.center)),
         Positioned.fill(
           child: GestureDetector(
             onTap: () async {

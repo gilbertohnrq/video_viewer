@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:helpers/helpers.dart';
 import 'package:provider/provider.dart';
 
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/domain/entities/styles/video_viewer.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import '../../../data/repositories/video.dart';
+import '../../../domain/entities/styles/video_viewer.dart';
+import '../../widgets/transitions.dart';
 
 class VideoProgressBar extends StatefulWidget {
   const VideoProgressBar({Key? key}) : super(key: key);
@@ -15,8 +15,7 @@ class VideoProgressBar extends StatefulWidget {
 }
 
 class _VideoProgressBarState extends State<VideoProgressBar> {
-  final ValueNotifier<Duration> _progressBarDraggingBuffer =
-      ValueNotifier<Duration>(Duration.zero);
+  final ValueNotifier<Duration> _progressBarDraggingBuffer = ValueNotifier<Duration>(Duration.zero);
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +39,8 @@ class _VideoProgressBarState extends State<VideoProgressBar> {
           return ValueListenableBuilder(
             valueListenable: _progressBarDraggingBuffer,
             builder: (_, Duration value, ___) {
-              final Duration draggingPosition =
-                  controller.isDraggingProgressBar ? value : position;
-              final double progressWidth =
-                  (draggingPosition.inMilliseconds / end.inMilliseconds) *
-                      width;
+              final Duration draggingPosition = controller.isDraggingProgressBar ? value : position;
+              final double progressWidth = (draggingPosition.inMilliseconds / end.inMilliseconds) * width;
 
               return _ProgressBarGesture(
                 width: width,
@@ -56,9 +52,7 @@ class _VideoProgressBarState extends State<VideoProgressBar> {
                       _ProgressBar(width: width, color: bar.background),
                       _ProgressBar(
                         color: bar.secondBackground,
-                        width: (controller.maxBuffering.inMilliseconds /
-                                end.inMilliseconds) *
-                            width,
+                        width: (controller.maxBuffering.inMilliseconds / end.inMilliseconds) * width,
                       ),
                       _ProgressBar(width: progressWidth, color: bar.color),
                       _DotIsDragging(width: width, dotPosition: progressWidth),
@@ -218,9 +212,7 @@ class _DotIsDragging extends StatelessWidget {
     final double dotWidth = style.bar.identifierWidth;
 
     return BooleanTween(
-      animate: controller.isDraggingProgressBar &&
-          (dotPosition > dotWidth) &&
-          (dotPosition < width - dotWidth),
+      animate: controller.isDraggingProgressBar && (dotPosition > dotWidth) && (dotPosition < width - dotWidth),
       tween: Tween<double>(begin: 0, end: 0.4),
       builder: (_, double value, __) => _Dot(
         width: width,
@@ -254,9 +246,7 @@ class _Dot extends StatelessWidget {
     final double dotSize = style.bar.identifierWidth;
 
     final double dotWidth = dotSize * 2;
-    final double width = dotPosition < dotSize
-        ? dotWidth
-        : dotPosition + dotSize * multiplicator;
+    final double width = dotPosition < dotSize ? dotWidth : dotPosition + dotSize * multiplicator;
 
     return ValueListenableBuilder(
       valueListenable: animation,
@@ -318,7 +308,7 @@ class _TextPositionPainter extends CustomPainter {
       ..addText(text);
 
     final paragraph = paragraphBuilder.build();
-    paragraph.layout(ui.ParagraphConstraints(width: 100));
+    paragraph.layout(const ui.ParagraphConstraints(width: 100));
 
     final height = barStyle!.bar.height;
     final padding = barStyle!.paddingBeetwen;

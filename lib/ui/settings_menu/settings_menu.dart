@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/domain/entities/settings_menu_item.dart';
+import '../../data/repositories/video.dart';
+import '../../domain/entities/settings_menu_item.dart';
 
-import 'package:video_viewer/ui/settings_menu/widgets/secondary_menu.dart';
-import 'package:video_viewer/ui/settings_menu/widgets/caption_menu.dart';
-import 'package:video_viewer/ui/settings_menu/widgets/quality_menu.dart';
-import 'package:video_viewer/ui/settings_menu/widgets/speed_menu.dart';
-import 'package:video_viewer/ui/settings_menu/main_menu.dart';
-import 'package:video_viewer/ui/widgets/transitions.dart';
+import 'widgets/secondary_menu.dart';
+import 'widgets/caption_menu.dart';
+import 'widgets/quality_menu.dart';
+import 'widgets/speed_menu.dart';
+import 'main_menu.dart';
+import '../widgets/transitions.dart';
 
 class SettingsMenu extends StatelessWidget {
   const SettingsMenu({Key? key}) : super(key: key);
@@ -38,18 +38,18 @@ class SettingsMenu extends StatelessWidget {
           child: Container(color: Colors.transparent),
         ),
       ),
-      CustomOpacityTransition(visible: main, child: MainMenu()), //MAIN MENU
+      CustomOpacityTransition(visible: main, child: const MainMenu()), //MAIN MENU
       CustomOpacityTransition(
         visible: secondary[0],
-        child: QualityMenu(),
+        child: const QualityMenu(),
       ),
       CustomOpacityTransition(
         visible: secondary[1],
-        child: SpeedMenu(),
+        child: const SpeedMenu(),
       ),
       CustomOpacityTransition(
         visible: secondary[2],
-        child: CaptionMenu(),
+        child: const CaptionMenu(),
       ),
       if (items != null)
         for (int i = 0; i < items.length; i++)

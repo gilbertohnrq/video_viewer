@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helpers/helpers.dart';
-import 'package:video_viewer/domain/entities/styles/bar.dart';
+import 'bar.dart';
 
 class ForwardAndRewindStyle {
   /// With this argument change the icons that appear when double-tapping,
@@ -15,13 +15,12 @@ class ForwardAndRewindStyle {
     Color? ripple,
     this.spaceBeetweenBarAndText = 10,
   })  : this.bar = bar ?? BarStyle.forward(),
-        this.padding = padding ?? Margin.all(10),
-        this.backgroundColor =
-            backgroundColor ?? Colors.black.withOpacity(0.28),
+        this.padding = padding ?? const Margin.all(10),
+        this.backgroundColor = backgroundColor ?? Colors.black.withOpacity(0.28),
         this.ripple = ripple ?? Colors.white.withOpacity(0.28),
         this.borderRadius = borderRadius ?? EdgeRadius.all(10),
-        this.rewind = rewind ?? Icon(Icons.fast_rewind, color: Colors.white),
-        this.forward = forward ?? Icon(Icons.fast_forward, color: Colors.white);
+        this.rewind = rewind ?? const Icon(Icons.fast_rewind, color: Colors.white),
+        this.forward = forward ?? const Icon(Icons.fast_forward, color: Colors.white);
 
   /// The icon that appears momentarily when you double tap
   ///

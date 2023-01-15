@@ -1,9 +1,9 @@
 import 'package:helpers/helpers.dart';
 import 'package:flutter/material.dart';
 
-import 'package:video_viewer/domain/entities/settings_menu_item.dart';
-import 'package:video_viewer/data/repositories/video.dart';
-import 'package:video_viewer/ui/widgets/helpers.dart';
+import '../../domain/entities/settings_menu_item.dart';
+import '../../data/repositories/video.dart';
+import '../widgets/helpers.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -36,25 +36,21 @@ class MainMenu extends StatelessWidget {
             index: 1,
             icon: style.speed,
             title: metadata.language.speed,
-            subtitle: speed == 1.0 ? metadata.language.normalSpeed : "x$speed",
+            subtitle: speed == 1.0 ? metadata.language.normalSpeed : 'x$speed',
           ),
           if (source[controller.activeSourceName!]!.subtitle != null)
             _MainMenuItem(
               index: 2,
               icon: style.caption,
               title: metadata.language.caption,
-              subtitle:
-                  controller.activeCaption ?? metadata.language.captionNone,
+              subtitle: controller.activeCaption ?? metadata.language.captionNone,
             ),
           if (items != null)
             for (int i = 0; i < items.length; i++) ...[
               items[i].themed == null
                   ? SplashCircularIcon(
-                      onTap: () => query
-                          .video(context)
-                          .openSecondarySettingsMenu(i + kDefaultMenus),
-                      padding:
-                          Margin.all(style.paddingBetweenMainMenuItems / 2),
+                      onTap: () => query.video(context).openSecondarySettingsMenu(i + kDefaultMenus),
+                      padding: Margin.all(style.paddingBetweenMainMenuItems / 2),
                       child: items[i].mainMenu,
                     )
                   : _MainMenuItem(

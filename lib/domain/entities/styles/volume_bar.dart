@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helpers/helpers.dart';
-import 'package:video_viewer/domain/entities/styles/bar.dart';
+import 'bar.dart';
 
 class VolumeBarStyle {
   /// Only Android Support, this style is for Volume controller but at
@@ -10,7 +10,7 @@ class VolumeBarStyle {
     EdgeInsetsGeometry? margin,
     this.alignment = Alignment.centerLeft,
   })  : this.bar = bar ?? BarStyle.volume(),
-        this.margin = margin ?? Margin.horizontal(20);
+        this.margin = margin ?? const Margin.horizontal(20);
 
   /// It is in the position that the Volume Bar will be found.
   ///

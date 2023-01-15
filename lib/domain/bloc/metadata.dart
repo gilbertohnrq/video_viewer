@@ -1,6 +1,6 @@
-import 'package:video_viewer/domain/entities/language.dart';
-import 'package:video_viewer/domain/entities/styles/video_viewer.dart';
-import 'package:video_viewer/domain/entities/volume_control.dart';
+import '../entities/language.dart';
+import '../entities/styles/video_viewer.dart';
+import '../entities/volume_control.dart';
 
 class VideoViewerMetadata {
   VideoViewerMetadata({
